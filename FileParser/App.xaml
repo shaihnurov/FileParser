@@ -1,0 +1,23 @@
+﻿<Application x:Class="FileParser.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="clr-namespace:FileParser"
+             xmlns:viewModel="clr-namespace:FileParser.MVVM.ViewModel"
+             xmlns:view="clr-namespace:FileParser.MVVM.View"
+             StartupUri="/MVVM/View/MainWindow.xaml">
+    <Application.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="Styles/Style.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+
+            <DataTemplate DataType="{x:Type viewModel:MainViewModel}">
+                <view:MainWindow/>
+            </DataTemplate>
+
+            <DataTemplate DataType="{x:Type viewModel:ParserViewModel}">
+                <view:ParserView/>
+            </DataTemplate>
+        </ResourceDictionary>
+    </Application.Resources>
+</Application>
